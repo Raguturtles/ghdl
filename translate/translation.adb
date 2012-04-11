@@ -1048,7 +1048,7 @@ package body Translation is
       Sig : Iir;
       Var : Var_Acc;
    end record;
-   type Direct_Driver_Arr is array (Natural range <>,Natural range<>) of Direct_Driver_Type;
+   type Direct_Driver_Arr is array (Natural range <>) of Direct_Driver_Type;
    type Direct_Drivers_Acc is access Direct_Driver_Arr;
 
    type Ortho_Info_Type;
