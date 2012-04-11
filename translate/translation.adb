@@ -510,7 +510,7 @@ package body Translation is
       Null_Subprg_Instance_El : constant Subprg_Instance_El :=
         (O_Dnode_Null, O_Tnode_Null, O_Tnode_Null);
 
-      type Subprg_Instance_Array is array (Natural range <>,Natural range)
+      type Subprg_Instance_Array is array (Natural range <>,Natural range<>)
         of Subprg_Instance_El;
 
       procedure Add_Subprg_Instance_Interfaces
@@ -775,7 +775,7 @@ package body Translation is
       Kind_Library
       );
 
-   type O_Fnode_Arr is array (Natural range <>,Natural range) of O_Fnode;
+   type O_Fnode_Arr is array (Natural range <>,Natural range<>) of O_Fnode;
    type O_Fnode_Arr_Acc is access O_Fnode_Arr;
    type Ortho_Info_Type_Kind is
      (
@@ -1048,7 +1048,7 @@ package body Translation is
       Sig : Iir;
       Var : Var_Acc;
    end record;
-   type Direct_Driver_Arr is array (Natural range <>) of Direct_Driver_Type;
+   type Direct_Driver_Arr is array (Natural range <>,Natural range<>) of Direct_Driver_Type;
    type Direct_Drivers_Acc is access Direct_Driver_Arr;
 
    type Ortho_Info_Type;
@@ -19898,8 +19898,8 @@ package body Translation is
 
       procedure Translate_Procedure_Call (Stmt : Iir_Procedure_Call)
       is
-         type Mnode_Array is array (Natural range <>,Natural range) of Mnode;
-         type O_Enode_Array is array (Natural range <>,Natural range) of O_Enode;
+         type Mnode_Array is array (Natural range <>,Natural range <>) of Mnode;
+         type O_Enode_Array is array (Natural range <>,Natural range <>) of O_Enode;
          Assoc_Chain : constant Iir := Get_Parameter_Association_Chain (Stmt);
          Nbr_Assoc : constant Natural :=
            Iir_Chains.Get_Chain_Length (Assoc_Chain);
@@ -26012,7 +26012,7 @@ package body Translation is
             Nbr_Lit : constant Integer := Get_Nbr_Elements (Lit_List);
             Lit : Iir;
 
-            type Dnode_Array is array (Natural range <>,Natural range) of O_Dnode;
+            type Dnode_Array is array (Natural range <>,Natural range<>) of O_Dnode;
             Name_Lits : Dnode_Array (0 .. Nbr_Lit - 1);
             Mark : Id_Mark_Type;
             Name_Arr_Type : O_Tnode;
